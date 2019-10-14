@@ -8,82 +8,82 @@ using System.Threading.Tasks;
 
 namespace RocketLeague.Services
 {
-    public class CarService
+    public class DecalService
     {
         private readonly Guid _userID;
 
-        public CarService(Guid userID)
+        public DecalService(Guid userID)
         {
             _userID = userID;
         }
 
-        public bool CreateCar(CarCreate model)
+        public bool CreateDecal(DecalCreate model)
         {
             var entity =
-                new Car()
+                new Decal()
                 {
                     OwnerID = _userID,
-                    CarName = model.CarName,
-                    CarColor = model.CarColor,
-                    CarRarity = model.CarRarity
+                    DecalName = model.DecalName,
+                    DecalColor = model.DecalColor,
+                    DecalRarity = model.DecalRarity,
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Cars.Add(entity);
+                ctx.Decals.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<CarListItem> GetCars()
+        public IEnumerable<DecalListItem> GetDecals()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                    .Cars
+                    .Decals
                     .Where(e => e.OwnerID == _userID)
                     .Select(
                         e =>
-                            new CarListItem
+                            new DecalListItem
                             {
-                                CarID = e.CarID,
-                                CarName = e.CarName,
-                                CarColor = e.CarColor,
-                                CarRarity = e.CarRarity,
+                                DecalID = e.DecalID,
+                                DecalName = e.DecalName,
+                                DecalColor = e.DecalColor,
+                                DecalRarity = e.DecalRarity,
                             }
                         );
                 return query.ToArray();
             }
         }
 
-        public bool UpdateCar(CarEdit model)
+        public bool UpdateDecal(DecalEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Cars
-                        .Single(e => e.CarID == model.CarID && e.OwnerID == _userID);
+                        .Decals
+                        .Single(e => e.DecalID == model.DecalID && e.OwnerID == _userID);
 
-                entity.CarID = model.CarID;
-                entity.CarName = model.CarName;
-                entity.CarColor = model.CarColor;
-                entity.CarRarity = model.CarRarity;
+                entity.DecalID = model.DecalID;
+                entity.DecalName = model.DecalName;
+                entity.DecalColor = model.DecalColor;
+                entity.DecalRarity = model.DecalRarity;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteCar(int CarId)
+        public bool DeleteDecal(int DecalId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Cars
-                        .Single(e => e.CarID == CarId && e.OwnerID == _userID);
+                        .Decals
+                        .Single(e => e.DecalID == DecalId && e.OwnerID == _userID);
 
-                ctx.Cars.Remove(entity);
+                ctx.Decals.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

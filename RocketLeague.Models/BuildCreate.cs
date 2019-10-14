@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace RocketLeague.Models
 {
-    public class GoalListItem
+    public class BuildCreate
     {
+        public string BuildName { get; set; }
+        public int CarID { get; set; }
+        public int DecalID { get; set; }
+        public int WheelsID { get; set; }
         public int GoalID { get; set; }
-        public string GoalName { get; set; }
-        public string GoalColor { get; set; }
-        public string GoalRarity { get; set; }
     }
 }

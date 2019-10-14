@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace RocketLeague.Models
 {
-    public class GoalListItem
+    public class GoalCreate
     {
-        public int GoalID { get; set; }
         public string GoalName { get; set; }
         public string GoalColor { get; set; }
         public string GoalRarity { get; set; }

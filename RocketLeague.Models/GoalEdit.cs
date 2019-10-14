@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RocketLeague.Models
 {
-    public class GoalListItem
+    public class GoalEdit
     {
         public int GoalID { get; set; }
         public string GoalName { get; set; }

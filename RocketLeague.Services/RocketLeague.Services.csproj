@@ -54,13 +54,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildService.cs" />
     <Compile Include="CarService.cs" />
+    <Compile Include="DecalService.cs" />
+    <Compile Include="GoalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WheelsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RocketLeague.Data\RocketLeague.Data.csproj">
+      <Project>{ce24e8af-3cda-4e72-b06f-2740823ad96c}</Project>
+      <Name>RocketLeague.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RocketLeague.Models\RocketLeague.Models.csproj">
+      <Project>{00a85255-e513-460e-b657-45ac2cbebf95}</Project>
+      <Name>RocketLeague.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

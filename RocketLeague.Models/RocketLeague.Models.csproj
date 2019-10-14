@@ -54,11 +54,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildCreate.cs" />
+    <Compile Include="BuildEdit.cs" />
     <Compile Include="BuildListItem.cs" />
+    <Compile Include="CarEdit.cs" />
+    <Compile Include="DecalCreate.cs" />
+    <Compile Include="DecalEdit.cs" />
+    <Compile Include="GoalCreate.cs" />
+    <Compile Include="GoalEdit.cs" />
+    <Compile Include="WheelsCreate.cs" />
+    <Compile Include="CarCreate.cs" />
     <Compile Include="CarListItem.cs" />
     <Compile Include="DecalListItem.cs" />
     <Compile Include="GoalListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WheelsEdit.cs" />
     <Compile Include="WheelsListItem.cs" />
   </ItemGroup>
   <ItemGroup>
