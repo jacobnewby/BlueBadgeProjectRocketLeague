@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RocketLeague.Models.WheelsListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.WheelsID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WheelsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WheelsColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WheelsRarity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WheelsID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WheelsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WheelsColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WheelsRarity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WheelsID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WheelsID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WheelsID })
+        </td>
+    </tr>
+}
+
+</table>

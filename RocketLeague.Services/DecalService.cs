@@ -56,6 +56,25 @@ namespace RocketLeague.Services
             }
         }
 
+        public DecalDetails GetDecalById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Decals
+                    .Single(e => e.DecalID == id && e.OwnerID == _userID);
+                return
+                    new DecalDetails
+                    {
+                        DecalID = entity.DecalID,
+                        DecalName = entity.DecalName,
+                        DecalColor = entity.DecalColor,
+                        DecalRarity = entity.DecalRarity,
+                    };
+            }
+        }
+
         public bool UpdateDecal(DecalEdit model)
         {
             using (var ctx = new ApplicationDbContext())

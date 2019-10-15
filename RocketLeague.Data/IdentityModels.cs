@@ -36,6 +36,7 @@ namespace RocketLeague.Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<Decal> Decals { get; set; }
         public DbSet<Wheels> Wheelss { get; set; }
+        public DbSet<Build> Builds { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

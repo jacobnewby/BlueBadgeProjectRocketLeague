@@ -55,12 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuildCreate.cs" />
+    <Compile Include="BuildDetails.cs" />
     <Compile Include="BuildEdit.cs" />
     <Compile Include="BuildListItem.cs" />
+    <Compile Include="CarDetails.cs" />
     <Compile Include="CarEdit.cs" />
     <Compile Include="DecalCreate.cs" />
+    <Compile Include="DecalDetails.cs" />
     <Compile Include="DecalEdit.cs" />
     <Compile Include="GoalCreate.cs" />
+    <Compile Include="GoalDetails.cs" />
     <Compile Include="GoalEdit.cs" />
     <Compile Include="WheelsCreate.cs" />
     <Compile Include="CarCreate.cs" />
@@ -68,6 +72,7 @@
     <Compile Include="DecalListItem.cs" />
     <Compile Include="GoalListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WheelsDetails.cs" />
     <Compile Include="WheelsEdit.cs" />
     <Compile Include="WheelsListItem.cs" />
   </ItemGroup>

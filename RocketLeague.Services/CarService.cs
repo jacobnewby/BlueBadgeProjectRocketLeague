@@ -56,6 +56,25 @@ namespace RocketLeague.Services
             }
         }
 
+        public CarDetails GetCarById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Cars
+                    .Single(e => e.CarID == id && e.OwnerID == _userID);
+                return
+                    new CarDetails
+                    {
+                        CarID = entity.CarID,
+                        CarName = entity.CarName,
+                        CarColor = entity.CarColor,
+                        CarRarity = entity.CarRarity,
+                    };
+            }
+        }
+
         public bool UpdateCar(CarEdit model)
         {
             using (var ctx = new ApplicationDbContext())

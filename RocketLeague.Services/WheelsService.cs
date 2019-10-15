@@ -56,6 +56,25 @@ namespace RocketLeague.Services
             }
         }
 
+        public WheelsDetails GetWheelsById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Wheelss
+                    .Single(e => e.WheelsID == id && e.OwnerID == _userID);
+                return
+                    new WheelsDetails
+                    {
+                        WheelsID = entity.WheelsID,
+                        WheelsName = entity.WheelsName,
+                        WheelsColor = entity.WheelsColor,
+                        WheelsRarity = entity.WheelsRarity,
+                    };
+            }
+        }
+
         public bool UpdateWheels(WheelsEdit model)
         {
             using (var ctx = new ApplicationDbContext())

@@ -17,7 +17,7 @@ namespace RocketLeague.Services
             _userID = userID;
         }
 
-        public bool GoalCar(GoalCreate model)
+        public bool CreateGoal(GoalCreate model)
         {
             var entity =
                 new Goal()
@@ -53,6 +53,25 @@ namespace RocketLeague.Services
                             }
                         );
                 return query.ToArray();
+            }
+        }
+
+        public GoalDetails GetGoalById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Goals
+                    .Single(e => e.GoalID == id && e.OwnerID == _userID);
+                return
+                    new GoalDetails
+                    {
+                        GoalID = entity.GoalID,
+                        GoalName = entity.GoalName,
+                        GoalColor = entity.GoalColor,
+                        GoalRarity = entity.GoalRarity,
+                    };
             }
         }
 
