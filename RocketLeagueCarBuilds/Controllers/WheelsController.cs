@@ -11,7 +11,7 @@ namespace RocketLeagueCarBuilds.Controllers
 {
     public class WheelsController : Controller
     {
-        // GET: Car
+        // GET: Wheels
         public ActionResult Index()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());

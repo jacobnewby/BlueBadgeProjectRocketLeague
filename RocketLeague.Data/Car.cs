@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,17 @@ namespace RocketLeague.Data
 {
     public class Car
     {
+        public enum Rarity
+        {
+            Rare,
+            [Description("Very Rare")]
+            VeryRare,
+            Import,
+            Exotic,
+            [Description("Black Market")]
+            BlackMarket,
+        }
+
         [Key]
         public int CarID { get; set; }
         public Guid OwnerID { get; set; }
@@ -17,6 +29,6 @@ namespace RocketLeague.Data
         [Required]
         public string CarColor { get; set; }
         [Required]
-        public string CarRarity { get; set; }
+        public Rarity CarRarity { get; set; }
     }
 }

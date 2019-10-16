@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static RocketLeague.Data.Car;
 
 namespace RocketLeague.Data
 {
@@ -17,6 +19,6 @@ namespace RocketLeague.Data
         [Required]
         public string DecalColor { get; set; }
         [Required]
-        public string DecalRarity { get; set; }
+        public Rarity DecalRarity { get; set; }
     }
 }

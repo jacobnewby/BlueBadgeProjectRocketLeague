@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DecalRarity, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DecalRarity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EnumDropDownListFor(model => model.DecalRarity, "- Please select rarity -", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DecalRarity, "", new { @class = "text-danger" })
             </div>
         </div>

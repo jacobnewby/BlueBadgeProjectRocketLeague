@@ -1,0 +1,63 @@
+﻿>@model IEnumerable<RocketLeague.Models.BuildListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DecalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WheelsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoalName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DecalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WheelsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoalName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BuildID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BuildID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BuildID })
+        </td>
+    </tr>
+}
+
+</table>

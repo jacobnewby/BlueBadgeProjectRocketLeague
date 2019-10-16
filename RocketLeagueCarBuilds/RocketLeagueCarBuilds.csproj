@@ -164,6 +164,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -247,11 +248,20 @@
     <Content Include="Views\Decal\Edit.cshtml" />
     <Content Include="Views\Decal\Delete.cshtml" />
     <Content Include="Views\Wheels\Index.cshtml" />
+    <Content Include="Views\Wheels\Create.cshtml" />
+    <Content Include="Views\Wheels\Edit.cshtml" />
+    <Content Include="Views\Wheels\Delete.cshtml" />
+    <Content Include="Views\Goal\Index.cshtml" />
+    <Content Include="Views\Goal\Create.cshtml" />
+    <Content Include="Views\Goal\Edit.cshtml" />
+    <Content Include="Views\Goal\Delete.cshtml" />
+    <Content Include="Views\Build\Index.cshtml" />
+    <Content Include="Views\Build\Create.cshtml" />
+    <Content Include="Views\Build\Edit.cshtml" />
+    <Content Include="Views\Build\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Build\" />
-    <Folder Include="Views\Goal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

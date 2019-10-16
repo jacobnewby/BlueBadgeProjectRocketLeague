@@ -41,6 +41,16 @@ namespace RocketLeague.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(BuildCreate model)
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            CarService serviceCar = new CarService(userId);
+            ViewBag.Cars = serviceCar.GetCars();
+            DecalService serviceDecal = new DecalService(userId);
+            ViewBag.Decals = serviceDecal.GetDecals();
+            WheelsService serviceWheels = new WheelsService(userId);
+            ViewBag.Wheelss = serviceWheels.GetWheels();
+            GoalService serviceGoal = new GoalService(userId);
+            ViewBag.Goals = serviceGoal.GetGoals();
+
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateBuildService();
@@ -99,6 +109,18 @@ namespace RocketLeague.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, BuildEdit model)
         {
+            var service = CreateBuildService();
+            var detail = service.GetBuildById(id);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            CarService serviceCar2 = new CarService(userId);
+            ViewBag.Cars = serviceCar2.GetCars();
+            DecalService serviceDecal2 = new DecalService(userId);
+            ViewBag.Decals = serviceDecal2.GetDecals();
+            WheelsService serviceWheels2 = new WheelsService(userId);
+            ViewBag.Wheelss = serviceWheels2.GetWheels();
+            GoalService serviceGoal2 = new GoalService(userId);
+            ViewBag.Goals = serviceGoal2.GetGoals();
+
             if (!ModelState.IsValid) return View(model);
 
             if (model.BuildID != id)
@@ -107,9 +129,9 @@ namespace RocketLeague.Controllers
                 return View(model);
             }
 
-            var service = CreateBuildService();
+            var service2 = CreateBuildService();
 
-            if (service.UpdateBuild(model))
+            if (service2.UpdateBuild(model))
             {
                 TempData["SaveResult"] = "Your build was updated.";
                 return RedirectToAction("Index");

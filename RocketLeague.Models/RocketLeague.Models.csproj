@@ -80,5 +80,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RocketLeague.Data\RocketLeague.Data.csproj">
+      <Project>{CE24E8AF-3CDA-4E72-B06F-2740823AD96C}</Project>
+      <Name>RocketLeague.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
