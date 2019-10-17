@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using RocketLeague.Data;
 using RocketLeague.Models;
 
@@ -19,10 +21,14 @@ namespace RocketLeague.Services
 
         public bool CreateBuild(BuildCreate model)
         {
+            Stream fs = model.File.InputStream;
+            BinaryReader br = new BinaryReader(fs);
+            byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
             var entity =
                 new Build()
                 {
-
+                    FileContent = bytes,
                     OwnerID = _userID,
                     BuildName = model.BuildName,
                     CarID = model.CarID,
@@ -50,6 +56,7 @@ namespace RocketLeague.Services
                             e =>
                                 new BuildListItem
                                 {
+                                    FileContent = e.FileContent,
                                     BuildID = e.BuildID,
                                     BuildName = e.BuildName,
                                     CarName = e.Car.CarName,

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace RocketLeague.Models
 {
     public class BuildCreate
     {
+        public HttpPostedFileBase File { get; set; }
         public string BuildName { get; set; }
         public int CarID { get; set; }
         public int DecalID { get; set; }

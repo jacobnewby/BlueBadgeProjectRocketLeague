@@ -14,6 +14,8 @@ namespace RocketLeague.Data
         public int BuildID { get; set; }
         [Required]
         public Guid OwnerID { get; set; }
+        public string FileName { get; set; }
+        public byte[] FileContent { get; set; }
         [Required]
         public string BuildName { get; set; }
         [ForeignKey("Car")]

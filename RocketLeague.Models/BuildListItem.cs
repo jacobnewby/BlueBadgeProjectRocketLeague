@@ -8,6 +8,7 @@ namespace RocketLeague.Models
 {
     public  class BuildListItem
     {
+        public byte[] FileContent { get; set; }
         public int BuildID { get; set; }
         public string BuildName { get; set; }
         public string CarName { get; set; }

@@ -11,6 +11,7 @@
 </p>
 <table class="table">
     <tr>
+        <th></th>
         <th>
             @Html.DisplayNameFor(model => model.BuildID)
         </th>
@@ -32,32 +33,47 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BuildID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BuildName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CarName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DecalName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WheelsName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GoalName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BuildID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BuildID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BuildID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{
+                    if (item.FileContent != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.FileContent);
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                <img src=@imgSrc />
+                    }
+                    else
+                    {
+                        <img src="" />
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WheelsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoalName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BuildID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BuildID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BuildID })
+            </td>
+        </tr>
+    }
 
 </table>
