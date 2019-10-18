@@ -1,12 +1,13 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: black;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,29 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.bodyContainer {
+    height: 95vh;
+    width: 100vw;
+}
+.bodyContainer h1 {
+    position: relative;
+    color: white;
+    text-align: center;
+    right: 20vw;
+    top: 40%;
+}
+.footer p {
+    text-align: left;
+}
+.card-body {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.carimg {
+    width: 90px;
+    height: 50px;
 }

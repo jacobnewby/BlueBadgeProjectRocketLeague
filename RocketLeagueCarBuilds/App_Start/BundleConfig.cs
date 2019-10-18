@@ -23,7 +23,7 @@ namespace RocketLeagueCarBuilds
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstraprocket.css",
                       "~/Content/site.css"));
         }
     }
