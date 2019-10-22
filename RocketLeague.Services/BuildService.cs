@@ -70,6 +70,34 @@ namespace RocketLeague.Services
             }
         }
 
+        public IEnumerable<BuildListItem> GetBuildsForHomePage()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Builds
+                        .Select(
+                            e =>
+                                new BuildListItem
+                                {
+                                    FileContent = e.FileContent,
+                                    BuildName = e.BuildName,
+                                }
+                        );
+                return query.ToList();
+            }
+        }
+
+        public IEnumerable<BuildListItem> GetRandomBuilds()
+         {
+            var list = GetBuildsForHomePage().ToList();
+            Random rnd = new Random();
+            var build1 = rnd.Next(list.Count);
+            var build2 = rnd.Next(list.Count);
+            return new List<BuildListItem> { list[build1], list[build2] };
+        }
+
         public BuildDetails GetBuildById(int id)
         {
             using (var ctx = new ApplicationDbContext())

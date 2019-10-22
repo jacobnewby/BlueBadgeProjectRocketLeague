@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using RocketLeague.Services;
 
 namespace RocketLeagueCarBuilds.Controllers
 {
@@ -10,7 +12,11 @@ namespace RocketLeagueCarBuilds.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BuildService(userId);
+            var model = service.GetRandomBuilds();
+
+            return View(model);
         }
 
         public ActionResult About()

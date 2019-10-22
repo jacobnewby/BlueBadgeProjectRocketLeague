@@ -29,12 +29,10 @@ textarea {
     width: 100vw;
 }
 
-    .bodyContainer h1 {
+    .bodyContainer img {
         position: relative;
-        color: white;
-        text-align: center;
-        right: 20vw;
-        top: 40%;
+        left: 15vw;
+        top: 15%;
     }
 
 .footer p {
@@ -58,4 +56,9 @@ textarea {
 .body-content footer {
     position: absolute;
     bottom: 0;
+}
+
+.body1{
+    background-image: url(../images/RL.png);
+    overflow: hidden;
 }
