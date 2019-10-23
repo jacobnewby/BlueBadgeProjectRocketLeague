@@ -21,7 +21,7 @@ namespace RocketLeague.Services
 
         public bool CreateBuild(BuildCreate model)
         {
-            Stream fs = model.File.InputStream;
+            Stream fs = model.File.InputStream;    
             BinaryReader br = new BinaryReader(fs);
             byte[] bytes = br.ReadBytes((Int32)fs.Length);
 
