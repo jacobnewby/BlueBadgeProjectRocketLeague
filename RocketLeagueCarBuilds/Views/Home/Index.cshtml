@@ -4,7 +4,34 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="bodyContainer">
+
+<div class="bodyContaine">
     <a class="titletext" href="https://cooltext.com"><img src="https://images.cooltext.com/5338946.png" width="623" height="122" alt="Pure RL Builds"></a>
 </div>
 
+
+@foreach (var item in Model)
+{
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4" id="imageCar">
+            <div class="thumbnail">
+                @{
+                    if (item.FileContent != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.FileContent);
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                        <img src=@imgSrc , class="carimghome" />
+                    }
+                    else
+                    {
+                        <img src="" />
+                    }
+                }
+                <div class="caption">
+                    <h4>@Html.DisplayFor(modelItem => item.BuildName)</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+}

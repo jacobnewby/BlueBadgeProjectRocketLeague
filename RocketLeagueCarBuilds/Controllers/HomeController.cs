@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RocketLeague.Services;
+using RocketLeague.Models;
 
 namespace RocketLeagueCarBuilds.Controllers
 {

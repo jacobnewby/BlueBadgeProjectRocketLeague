@@ -94,8 +94,7 @@ namespace RocketLeague.Services
             var list = GetBuildsForHomePage().ToList();
             Random rnd = new Random();
             var build1 = rnd.Next(list.Count);
-            var build2 = rnd.Next(list.Count);
-            return new List<BuildListItem> { list[build1], list[build2] };
+            return new List<BuildListItem> { list[build1]};
         }
 
         public BuildDetails GetBuildById(int id)

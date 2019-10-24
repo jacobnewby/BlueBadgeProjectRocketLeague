@@ -24,14 +24,14 @@ textarea {
     max-width: 280px;
 }
 
-.bodyContainer {
+/*.bodyContaine {
     height: 95vh;
     width: 100vw;
-}
+}*/
 
-    .bodyContainer img {
+    .bodyContaine img {
         position: relative;
-        left: 15vw;
+        left: 20vw;
         top: 15%;
     }
 
@@ -61,4 +61,13 @@ textarea {
 .body1{
     background-image: url(../images/RL.png);
     overflow: hidden;
+}
+
+.carimghome {
+    width: 200px;
+    height: 100px;
+}
+
+#imgCar {
+    top: 50%;
 }
