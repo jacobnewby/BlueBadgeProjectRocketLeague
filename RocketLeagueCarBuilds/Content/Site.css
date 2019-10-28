@@ -29,11 +29,11 @@ textarea {
     width: 100vw;
 }*/
 
-    .bodyContaine img {
-        position: relative;
-        left: 20vw;
-        top: 15%;
-    }
+.bodyContaine img {
+    position: relative;
+    left: 15vw;
+    top: 15%;
+}
 
 .footer p {
     text-align: left;
@@ -58,16 +58,33 @@ textarea {
     bottom: 0;
 }
 
-.body1{
+.body1 {
     background-image: url(../images/RL.png);
     overflow: hidden;
 }
 
-.carimghome {
-    width: 200px;
-    height: 100px;
+.card {
+    /* Add shadows to create the "card" effect */
+    position: absolute;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 300px;
+    width: 500px;
+    margin-top: 250px;
+    left: 150px;
 }
 
-#imgCar {
-    top: 50%;
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.carimghome {
+    height: 260px;
+    width: 498px;
 }

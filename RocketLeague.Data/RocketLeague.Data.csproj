@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201910171916268_New.Designer.cs">
       <DependentUpon>201910171916268_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910281457466_updateWeb.cs" />
+    <Compile Include="Migrations\201910281457466_updateWeb.Designer.cs">
+      <DependentUpon>201910281457466_updateWeb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Wheels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910171916268_New.resx">
       <DependentUpon>201910171916268_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910281457466_updateWeb.resx">
+      <DependentUpon>201910281457466_updateWeb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
