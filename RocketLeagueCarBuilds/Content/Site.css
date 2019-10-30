@@ -88,3 +88,42 @@ textarea {
     height: 260px;
     width: 498px;
 }
+
+.custombtn {
+    color: white;
+    font-weight: 500;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+}
+
+    .custombtn::before {
+        background-color: none;
+        position: absolute;
+        top: 0;
+        left: -10px;
+        z-index: -1;
+        box-sizing: content-box;
+        padding: 0 10px;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        content: '';
+        opacity: 0;
+        -webkit-transition: -webkit-transform 0.4s, opacity 0.3s;
+        transition: transform 0.4s, opacity 0.3s;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        text-decoration: none;
+    }
+
+    .custombtn:hover::before {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        text-decoration: none;
+    }

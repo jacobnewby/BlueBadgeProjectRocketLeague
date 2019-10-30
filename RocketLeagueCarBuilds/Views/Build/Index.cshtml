@@ -67,9 +67,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.GoalName)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BuildID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BuildID })
+            <td>   
+                <a href="~/Build/Edit/@item.BuildID" class="custombtn">Edit</a>
             </td>
         </tr>
     }
