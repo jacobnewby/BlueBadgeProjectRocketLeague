@@ -7,7 +7,7 @@
 <h2>Decals</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="~/Decal/Create" class="custombtn">Create</a>
 </p>
 <table class="table">
     <tr>
@@ -41,8 +41,8 @@
             @Html.DisplayFor(modelItem => item.DecalRarity)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DecalID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DecalID })
+            <a href="~/Decal/Edit/@item.DecalID" class="custombtn">Edit</a> |
+            <a href="~/Decal/Delete/@item.DecalID" class="custombtn">Delete</a>
         </td>
     </tr>
 }

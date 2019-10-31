@@ -7,7 +7,7 @@
 <h2>Wheels</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="~/Wheels/Create" class="custombtn">Create</a>
 </p>
 <table class="table">
     <tr>
@@ -41,8 +41,8 @@
             @Html.DisplayFor(modelItem => item.WheelsRarity)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WheelsID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.WheelsID })
+            <a href="~/Wheels/Edit/@item.WheelsID" class="custombtn">Edit</a> |
+            <a href="~/Wheels/Delete/@item.WheelsID" class="custombtn">Delete</a>
         </td>
     </tr>
 }

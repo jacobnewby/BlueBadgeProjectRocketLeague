@@ -7,7 +7,7 @@
 <h2>Builds</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="~/Build/Create" class="custombtn">Create</a>
 </p>
 <table class="table">
     <tr>
@@ -68,7 +68,9 @@
                 @Html.DisplayFor(modelItem => item.GoalName)
             </td>
             <td>   
-                <a href="~/Build/Edit/@item.BuildID" class="custombtn">Edit</a>
+                <a href="~/Build/Edit/@item.BuildID" class="custombtn">Edit</a> |
+                <a href="~/Build/Delete/@item.BuildID" class="custombtn">Delete</a>
+
             </td>
         </tr>
     }

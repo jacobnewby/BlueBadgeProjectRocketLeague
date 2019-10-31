@@ -23,7 +23,7 @@ namespace RocketLeague.Services
         {
             Stream fs = model.File.InputStream;    
             BinaryReader br = new BinaryReader(fs);
-            byte[] bytes = br.ReadBytes((Int32)fs.Length);
+            byte[] bytes = br.ReadBytes((Int32)fs.Length); 
 
             var entity =
                 new Build()
