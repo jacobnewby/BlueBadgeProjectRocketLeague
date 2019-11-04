@@ -4,11 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace RocketLeague.Models
 {
     public class BuildDetails
     {
+        public byte[] FileContent { get; set; }
         public int BuildID { get; set; }
         [Display(Name = "Name")]
         public string BuildName { get; set; }

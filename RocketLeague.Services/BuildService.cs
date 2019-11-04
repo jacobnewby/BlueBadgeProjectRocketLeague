@@ -108,6 +108,7 @@ namespace RocketLeague.Services
                 return
                     new BuildDetails
                     {
+                        FileContent = entity.FileContent,
                         BuildID = entity.BuildID,
                         BuildName = entity.BuildName,
                         CarName = entity.Car.CarName,
@@ -122,11 +123,17 @@ namespace RocketLeague.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+
+            Stream fs = model.File.InputStream;
+            BinaryReader br = new BinaryReader(fs);
+            byte[] bytes = br.ReadBytes((Int32)fs.Length);
+
                 var entity =
                     ctx
                         .Builds
                         .Single(e => e.BuildID == model.BuildID && e.OwnerID == _userID);
 
+                entity.FileContent = bytes;
                 entity.BuildName = model.BuildName;
                 entity.CarID = model.CarID;
                 entity.DecalID = model.DecalID;
