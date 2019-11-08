@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketLeague.Models", "Rock
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketLeague.Services", "RocketLeague.Services\RocketLeague.Services.csproj", "{EE557A73-248B-41BB-9017-011839FD668D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketLeague.WebAPI", "RocketLeague.WebAPI\RocketLeague.WebAPI.csproj", "{4C24D4DE-3705-4F30-842B-FA5B2A1D4E43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EE557A73-248B-41BB-9017-011839FD668D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE557A73-248B-41BB-9017-011839FD668D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE557A73-248B-41BB-9017-011839FD668D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C24D4DE-3705-4F30-842B-FA5B2A1D4E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C24D4DE-3705-4F30-842B-FA5B2A1D4E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C24D4DE-3705-4F30-842B-FA5B2A1D4E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C24D4DE-3705-4F30-842B-FA5B2A1D4E43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

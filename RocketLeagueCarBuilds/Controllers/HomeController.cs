@@ -13,11 +13,17 @@ namespace RocketLeagueCarBuilds.Controllers
     {
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new BuildService(userId);
-            var model = service.GetRandomBuilds();
-
-            return View(model);
+            if (Request.IsAuthenticated)
+            {
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var service = new BuildService(userId);
+                var model = service.GetRandomBuilds();
+                return View(model);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult About()
